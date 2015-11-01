@@ -10,8 +10,8 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='simple',
-    version='1.0',
+    name='simple0',
+    version='1.1',
     packages=find_packages(),
     url='https://github.com/neo1218/simple_clone',
     license='MIT',
@@ -32,7 +32,7 @@ setup(
     # /mana/mana.py/click::mana
     entry_points='''
         [console_scripts]
-		simple=simple:clone
+		simple0=simple0:clone
     ''',
     classifiers=[
         'Environment :: Web Environment',
