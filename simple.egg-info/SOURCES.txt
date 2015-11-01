@@ -1,7 +1,0 @@
-simple.egg-info/PKG-INFO
-simple.egg-info/SOURCES.txt
-simple.egg-info/dependency_links.txt
-simple.egg-info/entry_points.txt
-simple.egg-info/not-zip-safe
-simple.egg-info/requires.txt
-simple.egg-info/top_level.txt
