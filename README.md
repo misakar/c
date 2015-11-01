@@ -1,8 +1,8 @@
 # simple clone
 
-	simple clone a folder but change it to svn
+	simple clone a github repo folder but change it to svn
 
-#### sudo pip install simple
+#### sudo pip install simple0
 #### simple https://github.com/mitsuhiko/flask/tree/master/examples
 
     if you first use simple, you may meet this:
