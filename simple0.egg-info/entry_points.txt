@@ -1,0 +1,4 @@
+
+        [console_scripts]
+		simple=simple.simple0:clone
+    

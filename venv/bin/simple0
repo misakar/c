@@ -1,0 +1,10 @@
+#!/Users/apple/hack/simple/venv/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'simple0==1.1','console_scripts','simple0'
+__requires__ = 'simple0==1.1'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('simple0==1.1', 'console_scripts', 'simple0')()
+    )
