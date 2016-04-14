@@ -19,7 +19,9 @@ clone a github repo folder but change it to svn .
 
 for example: if you want to get flask examples, but don't like clone the whole flask repo,
 you can run: <br/>
-```c install https://github.com/pallets/flask/tree/master/examples```
+```c install https://github.com/pallets/flask/tree/master/examples``` <br/>
+or clearer <br/>
+```c install https://github.com/pallets/flask/tree/master/examples flask_examples``` <br/>
 
 ## Note
 if you first use c install, you may meet this:
