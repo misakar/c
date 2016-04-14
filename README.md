@@ -1,6 +1,5 @@
 # c
-[![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)](https://www.npmjs.com/package/c-clone)
-[![Package Control](https://img.shields.io/packagecontrol/dm/Package%20Control.svg?maxAge=2592000)](https://www.npmjs.com/package/c-clone)
+[![npm](https://img.shields.io/npm/v/c-clone.svg?maxAge=2592000)](https://www.npmjs.com/package/c-clone)
 <hr/>
 clone a github repo folder but change it to svn .
 
