@@ -1,0 +1,148 @@
+#!/usr/bin/env bash
+# c: c install repo_url
+
+#
+# setup
+#
+version='0.09'
+repoinfo=()
+svnurl=""
+
+#
+# show_version: show version info
+#
+function show_version()
+{
+    cat <<-EOF
+    [Info]
+    c: clone a github repo folder
+    version: $version
+EOF
+}
+
+
+#
+# error_exit <error msg>
+#   file descriptor 1 is the stdout
+#   file descriptor 2 is the stderr
+#   2>&1: stderr redirect to stdout
+#
+function error_exit()
+{
+    echo $1 2>&1
+    exit 1
+}
+
+#
+# log <type> <msg>
+#
+function log()
+{
+    printf "  \033[36m%10s\033[0m : \033[90m%s\033[0m\n" $1 $2
+}
+
+#
+# magic <git_url>
+#
+function magic()
+{
+    giturl=$1
+    local IFS="/"
+
+    repoinfo=($giturl)
+    repoinfo[5]="trunk"
+    unset repoinfo[6]
+
+    git2svn=${repoinfo[@]}
+    svnurl=${git2svn// //}
+}
+
+#
+# check
+#
+function check_github()
+{
+    hostname=${repoinfo[2]}
+    shouldbe="github.com"
+    if [ "$hostname" != "$shouldbe" ]
+    then
+        error_exit "the url is not a github repo url"
+        exit 1
+    fi
+}
+
+#
+# check_path_exist <folder>
+#
+function check_path_exist()
+{
+    if test -d "./$1"
+    then
+        error_exit "$1 already exists, please change the name!" 
+        exit 1
+    fi
+}
+
+#
+# bar <git_url>
+#
+
+#
+# display help msg
+#
+function display_help()
+{
+    cat <<-EOF
+    [Usage]
+        c install [github_folder_url]
+        c install [github_folder_url] [rename]
+EOF
+}
+
+#
+# svn_clone <svnurl> <name>
+# use svn clone the folder
+#
+function svn_clone()
+{
+    if test -z $2
+    then
+        svn checkout $1
+    else
+        svn checkout $1 $2
+    fi
+}
+
+#
+# main
+#   handle arguments
+#
+if test $# -eq 0; then
+    show_version
+else
+    while test $# -ne 0; do
+        case $1 in
+            install)
+                repourl=$2
+                if test -z $3
+                then :
+                else rename=$3
+                fi
+
+                magic $repourl
+                check_github
+                if test -z $3
+                then
+                    check_path_exist ${repoinfo[${#repoinfo[@]}]}
+                    svn_clone $svnurl
+                else
+                    check_path_exist $3
+                    svn_clone $svnurl $3
+                fi
+            ;;
+            -h|--help)
+                display_help ;;
+        esac
+        shift
+    done
+fi
