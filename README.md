@@ -10,7 +10,7 @@ clone a github repo folder but change it to svn .
 ## Info
 [Info] <br/>
     c: clone a github repo folder <br/>
-    version: 0.09 <br/>
+    version: 1.0.0 <br/>
 
 ## Usage
 [Usage] <br/>
