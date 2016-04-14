@@ -142,6 +142,8 @@ else
             ;;
             -h|--help)
                 display_help ;;
+            -v|--version)
+                show_version ;;
         esac
         shift
     done
