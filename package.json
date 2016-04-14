@@ -1,0 +1,31 @@
+{
+    "name": "c-clone",
+    "version": "1.0.0",
+    "description": "clone a github folder",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/neo1218/c.git"
+    },
+    "keywords": [
+        "github",
+        "clone",
+        "folder"
+    ],
+    "bin": {
+        "c": "./bin/c"
+    },
+    "preferGlobal": true,
+    "engines": {
+        "node": "*"
+    },
+    "author": "neo1218 <neo1218@yeah.net> (http://neo1218.github.io)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/neo1218/c/issues"
+    },
+    "homepage": "https://github.com/neo1218/c#readme"
+}

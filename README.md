@@ -4,7 +4,7 @@ clone a github repo folder but change it to svn .
 
 ## Install
 
-```$ npm install -g c```
+```$ npm install -g c-clone```
 
 ## Info
 [Info] <br/>
